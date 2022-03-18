@@ -4,7 +4,7 @@
 
 # Bot Marvin USB
 
-O Marvin USB é mantido com o objetivo de oferecer funcionalidades no seu whatsappp, que teriam a necessidade de se baixar um aplicativo ou visitar um site.
+O Marvin USB é mantido com o objetivo de oferecer funcionalidades no seu whatsapp, as quais teriam a necessidade de se baixar um aplicativo ou visitar um site.
 
 ## 🔧 Instalação & utilização:
 - Instale o ![NodeJs]()](https://nodejs.org/en/)
