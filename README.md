@@ -1,6 +1,6 @@
 # Bot Marvin USB
  
-<img src="bot.jpg" alt="exemplo imagem">
+<img src="bo1t.jpg" alt="exemplo imagem">
 
 # Bot Marvin USB
 
