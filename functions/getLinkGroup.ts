@@ -1,4 +1,3 @@
-import { createLog } from "../utils/createLog";
 
 export const getLinkGroup = (client) => {
   client.onMessage(async (message) => {
@@ -10,25 +9,10 @@ export const getLinkGroup = (client) => {
             "Para utilizar esse recurso preciso ser administrador 🙋‍♂️"
           );
           client.getGroupInviteLink(message.from).then(async (resposta) => {
-             await client.sendText(message.from, `Pronto! @${message.sender.pushname}\nAqui está o link do grupo:\n${resposta}`)
-
-            createLog({
-              action: "getLinkGroup",
-              error: false,
-              error_description: '',
-              whatsapp: message.author,
-            });
+            await client.sendText(message.from, `Pronto! @${message.sender.pushname}\nAqui está o link do grupo:\n${resposta}`)
           });
         } catch (error) {
-          const obj = {
-            actions: [],
-          };
-          createLog({
-            action: "getLinkGroup",
-            error: true,
-            error_description: error,
-            whatsapp: message.author,
-          });
+          console.log(error)
         }
       }
     }

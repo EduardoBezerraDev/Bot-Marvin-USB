@@ -1,10 +1,9 @@
-import { createLog } from "../utils/createLog";
 import translate from "translate-google";
 
 export const getTranslate = (client) => {
   client.onMessage(async (message) => {
     try {
-      if (message.type === "chat" ) {
+      if (message.type === "chat") {
         if (message.body.length > 13) {
           const msg = message.body;
           const languageSelected = msg.substring(0, 12);
@@ -31,19 +30,8 @@ export const getTranslate = (client) => {
             translate(text, { to: language }).then(translated => {
               client.sendText(message.from, `Pronto 😁 tradução feita para @${message.sender.pushname}\nTradução: ${translated}`)
 
-              createLog({
-                action: "getTranslate",
-                error: false,
-                error_description: '',
-                whatsapp: message.author,
-              });
             }).catch(error => {
-              createLog({
-                action: "getTranslate",
-                error: true,
-                error_description: error,
-                whatsapp: message.author,
-              });
+              console.log(error)
             })
           }
         }

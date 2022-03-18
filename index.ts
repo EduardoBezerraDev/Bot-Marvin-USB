@@ -14,20 +14,20 @@ const onDeath = require("./functions/onDeath.ts");
 const getTextToAudio = require("./functions/getTextToAudio.ts");
 const getNotice = require("./functions/getNotice.ts")
 const getTiktokVideo = require("./functions/getTiktokVideo.ts")
-const getTranslate =  require("./functions/getTranslate.ts")
-const getWhatsappLink =  require("./functions/getWhatsappLink")
-const getYoutubeMp4 =  require("./functions/getYoutubeMp4")
-const getWikipedia =  require("./functions/getWikipedia")
-const getDice =  require("./functions/getDice")
-const truthOrDare =  require("./functions/truthOrDare")
-const getTotal =  require("./functions/getTotal")
-const getWeather =  require("./functions/getWeather")
+const getTranslate = require("./functions/getTranslate.ts")
+const getWhatsappLink = require("./functions/getWhatsappLink")
+const getYoutubeMp4 = require("./functions/getYoutubeMp4")
+const getWikipedia = require("./functions/getWikipedia")
+const getDice = require("./functions/getDice")
+const truthOrDare = require("./functions/truthOrDare")
+const getTotal = require("./functions/getTotal")
+const getWeather = require("./functions/getWeather")
 process.setMaxListeners(15);
 
 onStartup.onStartup();
 onDeath.onDeath();
 wa.create({
-    sessionId: "",
+    sessionId: "BotMarvinUSB",
     restartOnCrash: (client) => start(client),
     authTimeout: 60, //Tempo aguardado para se conectar ao whatsapp
     blockCrashLogs: true,
@@ -73,7 +73,7 @@ function start(client) {
         truthOrDare.truthOrDare(client)
         getTotal.getTotal(client)
         getWeather.getWeather(client)
-       
+
     } catch (error) {
         console.log(error)
     }

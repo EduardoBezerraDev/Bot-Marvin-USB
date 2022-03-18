@@ -1,5 +1,4 @@
 import axios from "axios";
-import { createLog } from "../utils/createLog";
 
 export const getShorter = (client) => {
   client.onMessage(async (message) => {
@@ -33,33 +32,16 @@ export const getShorter = (client) => {
               const text = JSON.stringify(response.data.link)
                 .replace('"', "")
                 .replace('"', "");
-                await client.sendText(message.from, `Pronto 😁 link encurtado para @${message.sender.pushname}`)
-              createLog({
-                action: "getShorter",
-                error: false,
-                error_description: "",
-                whatsapp: message.author,
-              });
+              await client.sendText(message.from, `Pronto 😁 link encurtado para @${message.sender.pushname}`)
             })
             .catch(async (error) => {
               await client.sendText(
                 message.from,
                 `⚠ Não foi possível encurtar o link!`
               );
-              createLog({
-                action: "getShorter",
-                error: true,
-                error_description: error,
-                whatsapp: message.author,
-              });
             });
         } catch (error) {
-          createLog({
-            action: "getShorter",
-            error: true,
-            error_description: error,
-            whatsapp: message.author,
-          });
+          console.log(error)
         }
       }
     }

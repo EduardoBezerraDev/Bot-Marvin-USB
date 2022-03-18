@@ -1,4 +1,3 @@
-import { createLog } from "../utils/createLog";
 const instagram_download = require("@juliendu11/instagram-downloader");
 
 export const getMediaFromInsta = (client) => {
@@ -24,23 +23,12 @@ export const getMediaFromInsta = (client) => {
               archive,
               "Baixado do instagram utilizando o bot-x9 😁"
             );
-            createLog({
-              action: "getMediaFromInsta",
-              error: false,
-              error_description: "",
-              whatsapp: message.author,
-            });
           } catch (error) {
             console.log(error)
           }
         })();
       } catch (error) {
-        createLog({
-          action: "getMediaFromInsta",
-          error: true,
-          error_description: error,
-          whatsapp: message.author,
-        });
+        console.log(error)
       }
     }
   });

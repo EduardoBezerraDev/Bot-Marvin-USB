@@ -1,6 +1,5 @@
 import Ffmpeg from "fluent-ffmpeg";
 import ytdl from "ytdl-core";
-import { createLog } from "../utils/createLog";
 const { parse } = require('rss-to-json');
 
 export const getNotice = (client) => {
@@ -14,11 +13,11 @@ export const getNotice = (client) => {
           const timestamp = element.published
           const date = new Date(timestamp);
           const dateFormated = date.getDate() +
-          "/" + (date.getMonth() + 1) +
-          "/" + date.getFullYear() +
-          " " + date.getHours() +
-          ":" + date.getMinutes() +
-          ":" + date.getSeconds()
+            "/" + (date.getMonth() + 1) +
+            "/" + date.getFullYear() +
+            " " + date.getHours() +
+            ":" + date.getMinutes() +
+            ":" + date.getSeconds()
 
           const title = element.title
           const description = element.description

@@ -1,10 +1,9 @@
 const googleTTS = require("google-tts-api"); // CommonJS
 import mime from "mime-types";
-import { createLog } from "../utils/createLog";
 
 export const getTextToAudio = (client) => {
   client.onMessage(async (message) => {
-    if (message.type === "chat" ) {
+    if (message.type === "chat") {
       if (message.body.toLowerCase().includes("!textoparaaudio")) {
         if (message.body.substring(15).length > 1) {
           try {
@@ -28,20 +27,10 @@ export const getTextToAudio = (client) => {
                   await client.sendText(message.from, `Pronto 😁 @${message.sender.pushname}\n texto convertido para áudio`)
 
                 });
-                createLog({
-                  action: "getTextToAudio",
-                  error: false,
-                  error_description: "",
-                  whatsapp: message.author,
-                });
+
               });
           } catch (error) {
-            createLog({
-              action: "getTextToAudio",
-              error: true,
-              error_description: error,
-              whatsapp: message.author,
-            });
+            console.log(error)
           }
         }
 

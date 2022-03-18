@@ -2,7 +2,6 @@ const usetube = require('usetube')
 const fs = require("fs");
 
 import ytdl from "ytdl-core";
-import { createLog } from "../utils/createLog";
 
 export const getYoutubeMp4 = (client) => {
   client.onMessage(async (message) => {
@@ -55,21 +54,10 @@ export const getYoutubeMp4 = (client) => {
                   `${inf.title}.mp4`,
                   inf.title
                 );
-                createLog({
-                  action: "getYoutubeMp4",
-                  error: false,
-                  error_description: "",
-                  whatsapp: message.author,
-                });
+
               })
               .on("error", async (error) => {
                 console.log(error)
-                createLog({
-                  action: "getYoutubeMp4",
-                  error: true,
-                  error_description: error,
-                  whatsapp: message.author,
-                });
               })
           } else {
             client.sendText(

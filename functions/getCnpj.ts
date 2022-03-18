@@ -1,12 +1,11 @@
 import axios from "axios";
 import onlyNumber from "../utils/onlyNumber";
-import { createLog } from "../utils/createLog";
 
 
 export const getCnpj = (client) => {
   client.onMessage(async (message) => {
     if (message.type === "chat") {
-      if (message.body.toLowerCase().includes("!cnpj") ) {
+      if (message.body.toLowerCase().includes("!cnpj")) {
         // Faz parte do Menu, envia o link do grupo caso a mensagem digitada seja "!cnpj"
         try {
           const API_URL = "https://brasilapi.com.br/api/cnpj/v1/";
@@ -63,39 +62,25 @@ export const getCnpj = (client) => {
                 `Cep: ${cep} \n` +
                 `Telefone 1: ${ddd_telefone_1}\n` +
                 `Telefone 2: ${ddd_telefone_2}\n` +
-                `Opção Simples: ${
-                  opcao_pelo_simples === false ? "Não" : "Sim"
+                `Opção Simples: ${opcao_pelo_simples === false ? "Não" : "Sim"
                 }\n` +
-                `Data Opção Simples: ${
-                  data_opcao_pelo_simples === null
-                    ? ""
-                    : data_opcao_pelo_simples
+                `Data Opção Simples: ${data_opcao_pelo_simples === null
+                  ? ""
+                  : data_opcao_pelo_simples
                 }\n` +
                 `Opção MEI: ${opcao_pelo_mei === false ? "Não" : "Sim"}\n` +
                 `Situação Especial: ${situacao_especial}\n` +
-                `Data Situação Especial: ${
-                  data_situacao_especial === null ? "" : data_situacao_especial
+                `Data Situação Especial: ${data_situacao_especial === null ? "" : data_situacao_especial
                 }\n`;
-               await client.sendText(message.from, `Pronto! @${message.sender.pushname}\nresultado da busca por CNpJ:\n${textDisplay}`)
+              await client.sendText(message.from, `Pronto! @${message.sender.pushname}\nresultado da busca por CNpJ:\n${textDisplay}`)
 
-              createLog({
-                action: "getCnpj",
-                error: false,
-                error_description: "",
-                whatsapp: message.who,
-              });
             })
             .catch(async (error) => {
               await client.sendText(
                 message.from,
                 `⚠ CNPJ não encontrado! ⚠\nPor Favor verifique a ortografia (Não utilize pontos, traços e barra)`
               );
-              createLog({
-                action: "getCnpj",
-                error: true,
-                error_description: error,
-                whatsapp: message.author,
-              });
+
             });
         } catch (error) {
           console.log(error);
