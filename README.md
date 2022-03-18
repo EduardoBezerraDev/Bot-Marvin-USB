@@ -7,8 +7,8 @@
 O Marvin USB é mantido com o objetivo de oferecer funcionalidades no seu whatsapp, as quais teriam a necessidade de se baixar um aplicativo ou visitar um site.
 
 ## 🔧 Instalação & utilização:
-- Instale o ![NodeJs]()](https://nodejs.org/en/)
-- Instale o ![Typescript]()](https://nodejs.org/en/) utilizando: npm install typescript --save-dev
+- Instale o NodeJs ](https://nodejs.org/en/)
+- Instale o Typescript ](https://nodejs.org/en/) utilizando: npm install typescript --save-dev
 - Instale o TS-node globalmente: npm install ts-node --g
 - Navegue até a pasta principal (bot-marvin-usb caso não tenha mudado)
 - Utilize npm install
