@@ -6,6 +6,19 @@
 
 O Marvin USB é mantido com o objetivo de oferecer funcionalidades no seu whatsappp, que teriam a necessidade de se baixar um aplicativo ou visitar um site.
 
+## 🔧 Instalação & utilização:
+- Instale o ![NodeJs]()](https://nodejs.org/en/)
+- Instale o ![Typescript]()](https://nodejs.org/en/) utilizando: npm install typescript --save-dev
+- Instale o TS-node globalmente: npm install ts-node --g
+- Navegue até a pasta principal (bot-marvin-usb caso não tenha mudado)
+- Utilize npm install
+- após instalar todos os pacotes necessários, utilize: ts-node index
+- O marvin irá mostrar um código QR no terminal
+- Você deve escanear esse código com o seu whatsapp, assim como faz com o whatsapp WEB
+- Ele irá informar quando já estiver rodando
+- Envie "!menu" de um outro número para o número que está utilizando no Marvin
+- Ele irá enviar o menu para você, basta seguir os comandos que ele informa
+
 ## 🔧 Funçoes
 
 ### Baixar músicas:
